@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Dec 31 09:58:26 2025
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : top_squarerootdigital_uart
+Top-level Entity Name : top_squarerootdigital_uart
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 3,739 / 6,272 ( 60 % )
+    Total combinational functions : 3,714 / 6,272 ( 59 % )
+    Dedicated logic registers : 383 / 6,272 ( 6 % )
+Total registers : 383
+Total pins : 5 / 92 ( 5 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 20 / 30 ( 67 % )
+Total PLLs : 0 / 2 ( 0 % )

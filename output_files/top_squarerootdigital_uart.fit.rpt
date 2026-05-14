@@ -1,0 +1,1240 @@
+Fitter report for top_squarerootdigital_uart
+Wed Dec 31 09:58:26 2025
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Fitter Netlist Optimizations
+  6. Incremental Compilation Preservation Summary
+  7. Incremental Compilation Partition Settings
+  8. Incremental Compilation Placement Preservation
+  9. Pin-Out File
+ 10. Fitter Resource Usage Summary
+ 11. Fitter Partition Statistics
+ 12. Input Pins
+ 13. Output Pins
+ 14. Dual Purpose and Dedicated Pins
+ 15. I/O Bank Usage
+ 16. All Package Pins
+ 17. I/O Assignment Warnings
+ 18. Fitter Resource Utilization by Entity
+ 19. Delay Chain Summary
+ 20. Pad To Core Delay Chain Fanout
+ 21. Control Signals
+ 22. Global & Other Fast Signals
+ 23. Non-Global High Fan-Out Signals
+ 24. Fitter DSP Block Usage Summary
+ 25. DSP Block Details
+ 26. Routing Usage Summary
+ 27. LAB Logic Elements
+ 28. LAB-wide Signals
+ 29. LAB Signals Sourced
+ 30. LAB Signals Sourced Out
+ 31. LAB Distinct Inputs
+ 32. I/O Rules Summary
+ 33. I/O Rules Details
+ 34. I/O Rules Matrix
+ 35. Fitter Device Options
+ 36. Operating Settings and Conditions
+ 37. Estimated Delay Added for Hold Timing Summary
+ 38. Estimated Delay Added for Hold Timing Details
+ 39. Fitter Messages
+ 40. Fitter Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Fitter Summary                                                                       ;
++------------------------------------+-------------------------------------------------+
+; Fitter Status                      ; Successful - Wed Dec 31 09:58:26 2025           ;
+; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                      ; top_squarerootdigital_uart                      ;
+; Top-level Entity Name              ; top_squarerootdigital_uart                      ;
+; Family                             ; Cyclone IV E                                    ;
+; Device                             ; EP4CE6E22C8                                     ;
+; Timing Models                      ; Final                                           ;
+; Total logic elements               ; 3,739 / 6,272 ( 60 % )                          ;
+;     Total combinational functions  ; 3,714 / 6,272 ( 59 % )                          ;
+;     Dedicated logic registers      ; 383 / 6,272 ( 6 % )                             ;
+; Total registers                    ; 383                                             ;
+; Total pins                         ; 5 / 92 ( 5 % )                                  ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0 / 276,480 ( 0 % )                             ;
+; Embedded Multiplier 9-bit elements ; 20 / 30 ( 67 % )                                ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                                   ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                                                                    ;
++--------------------------------------------------------------------+---------------------------------------+---------------------------------------+
+; Option                                                             ; Setting                               ; Default Value                         ;
++--------------------------------------------------------------------+---------------------------------------+---------------------------------------+
+; Device                                                             ; EP4CE6E22C8                           ;                                       ;
+; Nominal Core Supply Voltage                                        ; 1.2V                                  ;                                       ;
+; Minimum Core Junction Temperature                                  ; 0                                     ;                                       ;
+; Maximum Core Junction Temperature                                  ; 85                                    ;                                       ;
+; Fit Attempts to Skip                                               ; 0                                     ; 0.0                                   ;
+; Use smart compilation                                              ; Off                                   ; Off                                   ;
+; Enable parallel Assembler and Timing Analyzer during compilation   ; On                                    ; On                                    ;
+; Enable compact report table                                        ; Off                                   ; Off                                   ;
+; Auto Merge PLLs                                                    ; On                                    ; On                                    ;
+; Router Timing Optimization Level                                   ; Normal                                ; Normal                                ;
+; Perform Clocking Topology Analysis During Routing                  ; Off                                   ; Off                                   ;
+; Placement Effort Multiplier                                        ; 1.0                                   ; 1.0                                   ;
+; Router Effort Multiplier                                           ; 1.0                                   ; 1.0                                   ;
+; Optimize Hold Timing                                               ; All Paths                             ; All Paths                             ;
+; Optimize Multi-Corner Timing                                       ; On                                    ; On                                    ;
+; Power Optimization During Fitting                                  ; Normal compilation                    ; Normal compilation                    ;
+; SSN Optimization                                                   ; Off                                   ; Off                                   ;
+; Optimize Timing                                                    ; Normal compilation                    ; Normal compilation                    ;
+; Optimize Timing for ECOs                                           ; Off                                   ; Off                                   ;
+; Regenerate Full Fit Report During ECO Compiles                     ; Off                                   ; Off                                   ;
+; Optimize IOC Register Placement for Timing                         ; Normal                                ; Normal                                ;
+; Limit to One Fitting Attempt                                       ; Off                                   ; Off                                   ;
+; Final Placement Optimizations                                      ; Automatically                         ; Automatically                         ;
+; Fitter Aggressive Routability Optimizations                        ; Automatically                         ; Automatically                         ;
+; Fitter Initial Placement Seed                                      ; 1                                     ; 1                                     ;
+; Periphery to Core Placement and Routing Optimization               ; Off                                   ; Off                                   ;
+; PCI I/O                                                            ; Off                                   ; Off                                   ;
+; Weak Pull-Up Resistor                                              ; Off                                   ; Off                                   ;
+; Enable Bus-Hold Circuitry                                          ; Off                                   ; Off                                   ;
+; Auto Packed Registers                                              ; Auto                                  ; Auto                                  ;
+; Auto Delay Chains                                                  ; On                                    ; On                                    ;
+; Auto Delay Chains for High Fanout Input Pins                       ; Off                                   ; Off                                   ;
+; Allow Single-ended Buffer for Differential-XSTL Input              ; Off                                   ; Off                                   ;
+; Treat Bidirectional Pin as Output Pin                              ; Off                                   ; Off                                   ;
+; Perform Physical Synthesis for Combinational Logic for Fitting     ; Off                                   ; Off                                   ;
+; Perform Physical Synthesis for Combinational Logic for Performance ; Off                                   ; Off                                   ;
+; Perform Register Duplication for Performance                       ; Off                                   ; Off                                   ;
+; Perform Logic to Memory Mapping for Fitting                        ; Off                                   ; Off                                   ;
+; Perform Register Retiming for Performance                          ; Off                                   ; Off                                   ;
+; Perform Asynchronous Signal Pipelining                             ; Off                                   ; Off                                   ;
+; Fitter Effort                                                      ; Auto Fit                              ; Auto Fit                              ;
+; Physical Synthesis Effort Level                                    ; Normal                                ; Normal                                ;
+; Logic Cell Insertion - Logic Duplication                           ; Auto                                  ; Auto                                  ;
+; Auto Register Duplication                                          ; Auto                                  ; Auto                                  ;
+; Auto Global Clock                                                  ; On                                    ; On                                    ;
+; Auto Global Register Control Signals                               ; On                                    ; On                                    ;
+; Reserve all unused pins                                            ; As input tri-stated with weak pull-up ; As input tri-stated with weak pull-up ;
+; Synchronizer Identification                                        ; Auto                                  ; Auto                                  ;
+; Enable Beneficial Skew Optimization                                ; On                                    ; On                                    ;
+; Optimize Design for Metastability                                  ; On                                    ; On                                    ;
+; Force Fitter to Avoid Periphery Placement Warnings                 ; Off                                   ; Off                                   ;
+; Enable input tri-state on active configuration pins in user mode   ; Off                                   ; Off                                   ;
++--------------------------------------------------------------------+---------------------------------------+---------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.11        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   4.1%      ;
+;     Processor 3            ;   3.7%      ;
+;     Processor 4            ;   3.5%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                                                                                                                                                                                                                                 ;
++-----------------------------------------------------------------------------------------------+-----------------+------------------+---------------------+-----------+----------------+-------------------------------------------------------------------------------------------------------------------------------------------+------------------+-----------------------+
+; Node                                                                                          ; Action          ; Operation        ; Reason              ; Node Port ; Node Port Name ; Destination Node                                                                                                                          ; Destination Port ; Destination Port Name ;
++-----------------------------------------------------------------------------------------------+-----------------+------------------+---------------------+-----------+----------------+-------------------------------------------------------------------------------------------------------------------------------------------+------------------+-----------------------+
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[0]               ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[0]               ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[0]~_Duplicate_1                                              ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[0]~_Duplicate_1  ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[1]               ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[1]               ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[1]~_Duplicate_1                                              ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[1]~_Duplicate_1  ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[2]               ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[2]               ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[2]~_Duplicate_1                                              ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[2]~_Duplicate_1  ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[3]               ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[3]               ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[3]~_Duplicate_1                                              ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[3]~_Duplicate_1  ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[4]               ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[4]               ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[4]~_Duplicate_1                                              ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[4]~_Duplicate_1  ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[5]               ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[5]               ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[5]~_Duplicate_1                                              ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[5]~_Duplicate_1  ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[6]               ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[6]               ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[6]~_Duplicate_1                                              ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[6]~_Duplicate_1  ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[7]               ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[7]               ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[7]~_Duplicate_1                                              ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[7]~_Duplicate_1  ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[8]               ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[8]               ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[8]~_Duplicate_1                                              ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[8]~_Duplicate_1  ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[9]               ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[9]               ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[9]~_Duplicate_1                                              ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[9]~_Duplicate_1  ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[10]              ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[10]              ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[10]~_Duplicate_1                                             ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[10]~_Duplicate_1 ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[11]              ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[11]              ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[11]~_Duplicate_1                                             ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[11]~_Duplicate_1 ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[12]              ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[12]              ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[12]~_Duplicate_1                                             ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[12]~_Duplicate_1 ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[13]              ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[13]              ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[13]~_Duplicate_1                                             ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[13]~_Duplicate_1 ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[14]              ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[14]              ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[14]~_Duplicate_1                                             ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[14]~_Duplicate_1 ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[15]              ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[15]              ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[15]~_Duplicate_1                                             ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[15]~_Duplicate_1 ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[16]              ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[16]              ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[16]~_Duplicate_1                                             ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[16]~_Duplicate_1 ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[17]              ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[17]              ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[17]~_Duplicate_1                                             ; Q                ;                       ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[17]~_Duplicate_1 ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[0]                                     ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[0]                                     ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[0]~_Duplicate_1                                                                    ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[1]                                     ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[1]                                     ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[1]~_Duplicate_1                                                                    ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[2]                                     ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[2]                                     ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[2]~_Duplicate_1                                                                    ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[3]                                     ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[3]                                     ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[3]~_Duplicate_1                                                                    ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[4]                                     ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[4]                                     ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[4]~_Duplicate_1                                                                    ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[5]                                     ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[5]                                     ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[5]~_Duplicate_1                                                                    ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[6]                                     ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[6]                                     ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[6]~_Duplicate_1                                                                    ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[7]                                     ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[7]                                     ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[7]~_Duplicate_1                                                                    ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[8]                                     ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[8]                                     ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[8]~_Duplicate_1                                                                    ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[9]                                     ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[9]                                     ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[9]~_Duplicate_1                                                                    ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[10]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[10]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[10]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[11]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[11]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[11]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[12]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[12]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[12]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[13]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[13]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[13]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[14]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[14]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[14]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[15]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[15]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[15]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[16]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[16]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[16]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[17]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[17]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[17]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[18]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[18]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[18]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[19]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[19]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[19]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[20]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[20]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[20]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[21]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[21]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[21]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[22]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[22]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[22]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[23]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[23]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[23]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[24]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[24]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[24]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[25]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[25]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[25]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[26]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[26]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[26]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[27]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[27]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[27]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[28]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[28]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[28]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[29]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[29]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[29]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[30]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[30]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[30]~_Duplicate_1                                                                   ; Q                ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[31]                                    ; Packed Register ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ; DATAA            ;                       ;
+; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[31]                                    ; Duplicated      ; Register Packing ; Timing optimization ; Q         ;                ; squarerootdigital:U_CORE|nr_polisher:U_POLISHER|nr_out[31]~_Duplicate_1                                                                   ; Q                ;                       ;
++-----------------------------------------------------------------------------------------------+-----------------+------------------+---------------------+-----------+----------------+-------------------------------------------------------------------------------------------------------------------------------------------+------------------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Incremental Compilation Preservation Summary                                                      ;
++---------------------+---------------------+----------------------------+--------------------------+
+; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
++---------------------+---------------------+----------------------------+--------------------------+
+; Placement (by node) ;                     ;                            ;                          ;
+;     -- Requested    ; 0.00 % ( 0 / 4156 ) ; 0.00 % ( 0 / 4156 )        ; 0.00 % ( 0 / 4156 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 4156 ) ; 0.00 % ( 0 / 4156 )        ; 0.00 % ( 0 / 4156 )      ;
+;                     ;                     ;                            ;                          ;
+; Routing (by net)    ;                     ;                            ;                          ;
+;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
+;     -- Achieved     ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
++---------------------+---------------------+----------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Incremental Compilation Partition Settings                                                                                                                                             ;
++--------------------------------+----------------+-------------------+-------------------------+------------------------+------------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Preservation Level Used ; Netlist Type Requested ; Preservation Level Requested ; Contents                       ;
++--------------------------------+----------------+-------------------+-------------------------+------------------------+------------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; N/A                     ; Source File            ; N/A                          ;                                ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; N/A                     ; Source File            ; N/A                          ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+-------------------------+------------------------+------------------------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Incremental Compilation Placement Preservation                                                                                     ;
++--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
+; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
++--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
+; Top                            ; 0.00 % ( 0 / 4146 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
++--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in D:/Quartus/Sistem Digital/Square-Root-Digital-main/output_files/top_squarerootdigital_uart.pin.
+
+
++----------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                        ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Total logic elements                        ; 3,739 / 6,272 ( 60 % ) ;
+;     -- Combinational with no register       ; 3356                   ;
+;     -- Register only                        ; 25                     ;
+;     -- Combinational with a register        ; 358                    ;
+;                                             ;                        ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 2935                   ;
+;     -- 3 input functions                    ; 495                    ;
+;     -- <=2 input functions                  ; 284                    ;
+;     -- Register only                        ; 25                     ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 3325                   ;
+;     -- arithmetic mode                      ; 389                    ;
+;                                             ;                        ;
+; Total registers*                            ; 383 / 6,684 ( 6 % )    ;
+;     -- Dedicated logic registers            ; 383 / 6,272 ( 6 % )    ;
+;     -- I/O registers                        ; 0 / 412 ( 0 % )        ;
+;                                             ;                        ;
+; Total LABs:  partially or completely used   ; 262 / 392 ( 67 % )     ;
+; Virtual pins                                ; 0                      ;
+; I/O pins                                    ; 5 / 92 ( 5 % )         ;
+;     -- Clock pins                           ; 2 / 3 ( 67 % )         ;
+;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )          ;
+;                                             ;                        ;
+; M9Ks                                        ; 0 / 30 ( 0 % )         ;
+; Total block memory bits                     ; 0 / 276,480 ( 0 % )    ;
+; Total block memory implementation bits      ; 0 / 276,480 ( 0 % )    ;
+; Embedded Multiplier 9-bit elements          ; 20 / 30 ( 67 % )       ;
+; PLLs                                        ; 0 / 2 ( 0 % )          ;
+; Global signals                              ; 2                      ;
+;     -- Global clocks                        ; 2 / 10 ( 20 % )        ;
+; JTAGs                                       ; 0 / 1 ( 0 % )          ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
+; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
+; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
+; Average interconnect usage (total/H/V)      ; 7.5% / 7.0% / 8.1%     ;
+; Peak interconnect usage (total/H/V)         ; 19.3% / 17.3% / 22.1%  ;
+; Maximum fan-out                             ; 793                    ;
+; Highest non-global fan-out                  ; 793                    ;
+; Total fan-out                               ; 15617                  ;
+; Average fan-out                             ; 3.76                   ;
++---------------------------------------------+------------------------+
+*  Register count does not include registers inside RAM blocks or DSP blocks.
+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                         ;
++---------------------------------------------+----------------------+--------------------------------+
+; Statistic                                   ; Top                  ; hard_block:auto_generated_inst ;
++---------------------------------------------+----------------------+--------------------------------+
+; Difficulty Clustering Region                ; Low                  ; Low                            ;
+;                                             ;                      ;                                ;
+; Total logic elements                        ; 3739 / 6272 ( 60 % ) ; 0 / 6272 ( 0 % )               ;
+;     -- Combinational with no register       ; 3356                 ; 0                              ;
+;     -- Register only                        ; 25                   ; 0                              ;
+;     -- Combinational with a register        ; 358                  ; 0                              ;
+;                                             ;                      ;                                ;
+; Logic element usage by number of LUT inputs ;                      ;                                ;
+;     -- 4 input functions                    ; 2935                 ; 0                              ;
+;     -- 3 input functions                    ; 495                  ; 0                              ;
+;     -- <=2 input functions                  ; 284                  ; 0                              ;
+;     -- Register only                        ; 25                   ; 0                              ;
+;                                             ;                      ;                                ;
+; Logic elements by mode                      ;                      ;                                ;
+;     -- normal mode                          ; 3325                 ; 0                              ;
+;     -- arithmetic mode                      ; 389                  ; 0                              ;
+;                                             ;                      ;                                ;
+; Total registers                             ; 383                  ; 0                              ;
+;     -- Dedicated logic registers            ; 383 / 6272 ( 6 % )   ; 0 / 6272 ( 0 % )               ;
+;     -- I/O registers                        ; 0                    ; 0                              ;
+;                                             ;                      ;                                ;
+; Total LABs:  partially or completely used   ; 262 / 392 ( 67 % )   ; 0 / 392 ( 0 % )                ;
+;                                             ;                      ;                                ;
+; Virtual pins                                ; 0                    ; 0                              ;
+; I/O pins                                    ; 5                    ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 20 / 30 ( 67 % )     ; 0 / 30 ( 0 % )                 ;
+; Total memory bits                           ; 0                    ; 0                              ;
+; Total RAM block bits                        ; 0                    ; 0                              ;
+; Clock control block                         ; 2 / 12 ( 16 % )      ; 0 / 12 ( 0 % )                 ;
+;                                             ;                      ;                                ;
+; Connections                                 ;                      ;                                ;
+;     -- Input Connections                    ; 0                    ; 0                              ;
+;     -- Registered Input Connections         ; 0                    ; 0                              ;
+;     -- Output Connections                   ; 0                    ; 0                              ;
+;     -- Registered Output Connections        ; 0                    ; 0                              ;
+;                                             ;                      ;                                ;
+; Internal Connections                        ;                      ;                                ;
+;     -- Total Connections                    ; 15964                ; 5                              ;
+;     -- Registered Connections               ; 2412                 ; 0                              ;
+;                                             ;                      ;                                ;
+; External Connections                        ;                      ;                                ;
+;     -- Top                                  ; 0                    ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0                    ; 0                              ;
+;                                             ;                      ;                                ;
+; Partition Interface                         ;                      ;                                ;
+;     -- Input Ports                          ; 3                    ; 0                              ;
+;     -- Output Ports                         ; 2                    ; 0                              ;
+;     -- Bidir Ports                          ; 0                    ; 0                              ;
+;                                             ;                      ;                                ;
+; Registered Ports                            ;                      ;                                ;
+;     -- Registered Input Ports               ; 0                    ; 0                              ;
+;     -- Registered Output Ports              ; 0                    ; 0                              ;
+;                                             ;                      ;                                ;
+; Port Connectivity                           ;                      ;                                ;
+;     -- Input Ports driven by GND            ; 0                    ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                    ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                    ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                    ; 0                              ;
+;     -- Input Ports with no Source           ; 0                    ; 0                              ;
+;     -- Output Ports with no Source          ; 0                    ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                    ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                    ; 0                              ;
++---------------------------------------------+----------------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                                                                                               ;
++---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
+; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
++---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
+; clk     ; 23    ; 1        ; 0            ; 11           ; 7            ; 387                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; rst_btn ; 25    ; 2        ; 0            ; 11           ; 21           ; 332                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; uart_rx ; 115   ; 7        ; 28           ; 24           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
++---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                                                                                                                                                               ;
++----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
+; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Output Enable Source ; Output Enable Group ;
++----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
+; led_busy ; 87    ; 5        ; 34           ; 10           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; uart_tx  ; 114   ; 7        ; 28           ; 24           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
++----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Dual Purpose and Dedicated Pins                                                                                         ;
++----------+-----------------------------+--------------------------+-------------------------+---------------------------+
+; Location ; Pin Name                    ; Reserved As              ; User Signal Name        ; Pin Type                  ;
++----------+-----------------------------+--------------------------+-------------------------+---------------------------+
+; 6        ; DIFFIO_L1n, DATA1, ASDO     ; As input tri-stated      ; ~ALTERA_ASDO_DATA1~     ; Dual Purpose Pin          ;
+; 8        ; DIFFIO_L2p, FLASH_nCE, nCSO ; As input tri-stated      ; ~ALTERA_FLASH_nCE_nCSO~ ; Dual Purpose Pin          ;
+; 9        ; nSTATUS                     ; -                        ; -                       ; Dedicated Programming Pin ;
+; 12       ; DCLK                        ; As output driving ground ; ~ALTERA_DCLK~           ; Dual Purpose Pin          ;
+; 13       ; DATA0                       ; As input tri-stated      ; ~ALTERA_DATA0~          ; Dual Purpose Pin          ;
+; 14       ; nCONFIG                     ; -                        ; -                       ; Dedicated Programming Pin ;
+; 21       ; nCE                         ; -                        ; -                       ; Dedicated Programming Pin ;
+; 87       ; DIFFIO_R7p, DEV_CLRn        ; Use as regular IO        ; led_busy                ; Dual Purpose Pin          ;
+; 92       ; CONF_DONE                   ; -                        ; -                       ; Dedicated Programming Pin ;
+; 94       ; MSEL0                       ; -                        ; -                       ; Dedicated Programming Pin ;
+; 96       ; MSEL1                       ; -                        ; -                       ; Dedicated Programming Pin ;
+; 97       ; MSEL2                       ; -                        ; -                       ; Dedicated Programming Pin ;
+; 97       ; MSEL3                       ; -                        ; -                       ; Dedicated Programming Pin ;
+; 101      ; DIFFIO_R3n, nCEO            ; Use as programming pin   ; ~ALTERA_nCEO~           ; Dual Purpose Pin          ;
++----------+-----------------------------+--------------------------+-------------------------+---------------------------+
+
+
++-----------------------------------------------------------+
+; I/O Bank Usage                                            ;
++----------+-----------------+---------------+--------------+
+; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
++----------+-----------------+---------------+--------------+
+; 1        ; 5 / 11 ( 45 % ) ; 2.5V          ; --           ;
+; 2        ; 1 / 8 ( 13 % )  ; 2.5V          ; --           ;
+; 3        ; 0 / 11 ( 0 % )  ; 2.5V          ; --           ;
+; 4        ; 0 / 14 ( 0 % )  ; 2.5V          ; --           ;
+; 5        ; 1 / 13 ( 8 % )  ; 2.5V          ; --           ;
+; 6        ; 1 / 10 ( 10 % ) ; 2.5V          ; --           ;
+; 7        ; 2 / 13 ( 15 % ) ; 2.5V          ; --           ;
+; 8        ; 0 / 12 ( 0 % )  ; 2.5V          ; --           ;
++----------+-----------------+---------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                                                                                                        ;
++----------+------------+----------+-----------------------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage                                            ; Dir.   ; I/O Standard ; Voltage ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
++----------+------------+----------+-----------------------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
+; 1        ; 0          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 2        ; 1          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 3        ; 2          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 4        ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 5        ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
+; 6        ; 5          ; 1        ; ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP     ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
+; 7        ; 6          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 8        ; 7          ; 1        ; ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
+; 9        ; 9          ; 1        ; ^nSTATUS                                                  ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 10       ; 13         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 11       ; 14         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 12       ; 15         ; 1        ; ~ALTERA_DCLK~                                             ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
+; 13       ; 16         ; 1        ; ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP          ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
+; 14       ; 17         ; 1        ; ^nCONFIG                                                  ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 15       ; 18         ; 1        ; #TDI                                                      ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; 16       ; 19         ; 1        ; #TCK                                                      ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; 17       ;            ; 1        ; VCCIO1                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 18       ; 20         ; 1        ; #TMS                                                      ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; 19       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 20       ; 21         ; 1        ; #TDO                                                      ; output ;              ;         ; --         ;                 ; --       ; --           ;
+; 21       ; 22         ; 1        ; ^nCE                                                      ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 22       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 23       ; 24         ; 1        ; clk                                                       ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 24       ; 25         ; 2        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 25       ; 26         ; 2        ; rst_btn                                                   ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 26       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 27       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 28       ; 31         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 29       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
+; 30       ; 34         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 31       ; 36         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 32       ; 39         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 33       ; 40         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 34       ; 41         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 35       ;            ; --       ; VCCA1                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 36       ;            ;          ; GNDA1                                                     ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 37       ;            ;          ; VCCD_PLL1                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
+; 38       ; 45         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 39       ; 46         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 40       ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 41       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 42       ; 52         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 43       ; 53         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 44       ; 54         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 45       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
+; 46       ; 58         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; 47       ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 48       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 49       ; 68         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 50       ; 69         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 51       ; 70         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 52       ; 72         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 53       ; 73         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 54       ; 74         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 55       ; 75         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 56       ;            ; 4        ; VCCIO4                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 57       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 58       ; 80         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 59       ; 83         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 60       ; 84         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 61       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
+; 62       ;            ; 4        ; VCCIO4                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 63       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 64       ; 89         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 65       ; 90         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; 66       ; 93         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 67       ; 94         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 68       ; 96         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 69       ; 97         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 70       ; 98         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 71       ; 99         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 72       ; 100        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 73       ; 102        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 74       ; 103        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 75       ; 104        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 76       ; 106        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 77       ; 107        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 78       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
+; 79       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 80       ; 113        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 81       ;            ; 5        ; VCCIO5                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 82       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 83       ; 117        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 84       ; 118        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 85       ; 119        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 86       ; 120        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 87       ; 121        ; 5        ; led_busy                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 88       ; 125        ; 5        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 89       ; 126        ; 5        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 90       ; 127        ; 6        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 91       ; 128        ; 6        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 92       ; 129        ; 6        ; ^CONF_DONE                                                ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 93       ;            ; 6        ; VCCIO6                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 94       ; 130        ; 6        ; ^MSEL0                                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 95       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 96       ; 131        ; 6        ; ^MSEL1                                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 97       ; 132        ; 6        ; ^MSEL2                                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 97       ; 133        ; 6        ; ^MSEL3                                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 98       ; 136        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 99       ; 137        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 100      ; 138        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 101      ; 139        ; 6        ; ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN                ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 102      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
+; 103      ; 140        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 104      ; 141        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 105      ; 142        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 106      ; 146        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; 107      ;            ; --       ; VCCA2                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 108      ;            ;          ; GNDA2                                                     ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 109      ;            ;          ; VCCD_PLL2                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
+; 110      ; 152        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 111      ; 154        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 112      ; 155        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 113      ; 156        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 114      ; 157        ; 7        ; uart_tx                                                   ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 115      ; 158        ; 7        ; uart_rx                                                   ; input  ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 116      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
+; 117      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 118      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 119      ; 163        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; 120      ; 164        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 121      ; 165        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 122      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 123      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 124      ; 173        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 125      ; 174        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 126      ; 175        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 127      ; 176        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 128      ; 177        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 129      ; 178        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 130      ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 131      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 132      ; 181        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 133      ; 182        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 134      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
+; 135      ; 185        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 136      ; 187        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; 137      ; 190        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 138      ; 191        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 139      ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
+; 140      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 141      ; 195        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 142      ; 201        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 143      ; 202        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; 144      ; 203        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; EPAD     ;            ;          ; GND                                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
++----------+------------+----------+-----------------------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++------------------------------------------+
+; I/O Assignment Warnings                  ;
++----------+-------------------------------+
+; Pin Name ; Reason                        ;
++----------+-------------------------------+
+; uart_tx  ; Incomplete set of assignments ;
+; led_busy ; Incomplete set of assignments ;
+; clk      ; Incomplete set of assignments ;
+; rst_btn  ; Incomplete set of assignments ;
+; uart_rx  ; Incomplete set of assignments ;
++----------+-------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; Compilation Hierarchy Node                    ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                                                         ; Entity Name                ; Library Name ;
++-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; |top_squarerootdigital_uart                   ; 3739 (1)    ; 383 (0)                   ; 0 (0)         ; 0           ; 0    ; 20           ; 0       ; 10        ; 5    ; 0            ; 3356 (1)     ; 25 (0)            ; 358 (0)          ; |top_squarerootdigital_uart                                                                                                                                 ; top_squarerootdigital_uart ; work         ;
+;    |UART_16_Bit_System:U_COMMS|               ; 151 (51)    ; 102 (41)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 49 (10)      ; 21 (8)            ; 81 (33)          ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS                                                                                                      ; UART_16_Bit_System         ; work         ;
+;       |UART_8_Bit:UART_CORE|                  ; 100 (100)   ; 61 (61)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 39 (39)      ; 13 (13)           ; 48 (48)          ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE                                                                                 ; UART_8_Bit                 ; work         ;
+;    |squarerootdigital:U_CORE|                 ; 3603 (36)   ; 281 (26)                  ; 0 (0)         ; 0           ; 0    ; 20           ; 0       ; 10        ; 0    ; 0            ; 3306 (9)     ; 4 (0)             ; 293 (29)         ; |top_squarerootdigital_uart|squarerootdigital:U_CORE                                                                                                        ; squarerootdigital          ; work         ;
+;       |divider:U_DIVIDER|                     ; 659 (0)     ; 85 (0)                    ; 0 (0)         ; 0           ; 0    ; 16           ; 0       ; 8         ; 0    ; 0            ; 574 (0)      ; 0 (0)             ; 85 (0)           ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER                                                                                      ; divider                    ; work         ;
+;          |goldschmidt:U_GOLDSCHMIDT|          ; 345 (137)   ; 85 (85)                   ; 0 (0)         ; 0           ; 0    ; 16           ; 0       ; 8         ; 0    ; 0            ; 260 (52)     ; 0 (0)             ; 85 (53)          ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT                                                            ; goldschmidt                ; work         ;
+;             |multiplier:mult_den|             ; 120 (32)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 8            ; 0       ; 4         ; 0    ; 0            ; 120 (32)     ; 0 (0)             ; 0 (0)            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den                                        ; multiplier                 ; work         ;
+;                |lpm_mult:Mult0|               ; 88 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 8            ; 0       ; 4         ; 0    ; 0            ; 88 (0)       ; 0 (0)             ; 0 (0)            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0                         ; lpm_mult                   ; work         ;
+;                   |mult_46t:auto_generated|   ; 88 (88)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 8            ; 0       ; 4         ; 0    ; 0            ; 88 (88)      ; 0 (0)             ; 0 (0)            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated ; mult_46t                   ; work         ;
+;             |multiplier:mult_num|             ; 120 (32)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 8            ; 0       ; 4         ; 0    ; 0            ; 88 (0)       ; 0 (0)             ; 32 (32)          ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num                                        ; multiplier                 ; work         ;
+;                |lpm_mult:Mult0|               ; 88 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 8            ; 0       ; 4         ; 0    ; 0            ; 88 (0)       ; 0 (0)             ; 0 (0)            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0                         ; lpm_mult                   ; work         ;
+;                   |mult_46t:auto_generated|   ; 88 (88)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 8            ; 0       ; 4         ; 0    ; 0            ; 88 (88)      ; 0 (0)             ; 0 (0)            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0|mult_46t:auto_generated ; mult_46t                   ; work         ;
+;          |gs_initial_guess:U_ROM|             ; 314 (314)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 314 (314)    ; 0 (0)             ; 0 (0)            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|gs_initial_guess:U_ROM                                                               ; gs_initial_guess           ; work         ;
+;       |nr_polisher:U_POLISHER|                ; 34 (34)     ; 33 (33)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 33 (33)          ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|nr_polisher:U_POLISHER                                                                                 ; nr_polisher                ; work         ;
+;       |post_processor:U_POST|                 ; 226 (196)   ; 56 (56)                   ; 0 (0)         ; 0           ; 0    ; 4            ; 0       ; 2         ; 0    ; 0            ; 170 (140)    ; 0 (0)             ; 56 (56)          ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|post_processor:U_POST                                                                                  ; post_processor             ; work         ;
+;          |lpm_mult:Mult0|                     ; 30 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 4            ; 0       ; 2         ; 0    ; 0            ; 30 (0)       ; 0 (0)             ; 0 (0)            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0                                                                   ; lpm_mult                   ; work         ;
+;             |mult_vgt:auto_generated|         ; 30 (30)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 4            ; 0       ; 2         ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 0 (0)            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated                                           ; mult_vgt                   ; work         ;
+;       |seed_generator:U_SEED_GEN|             ; 2649 (87)   ; 81 (81)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2552 (9)     ; 4 (4)             ; 93 (26)          ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN                                                                              ; seed_generator             ; work         ;
+;          |nr_initial_guess:U_NR_ROM|          ; 2496 (2496) ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2467 (2467)  ; 0 (0)             ; 29 (29)          ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|nr_initial_guess:U_NR_ROM                                                    ; nr_initial_guess           ; work         ;
+;          |pre_processor:U_PRE_PROC|           ; 114 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 76 (0)       ; 0 (0)             ; 38 (0)           ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC                                                     ; pre_processor              ; work         ;
+;             |normaliser_top:U_NORM|           ; 114 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 76 (0)       ; 0 (0)             ; 38 (0)           ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM                               ; normaliser_top             ; work         ;
+;                |barrel_shifter:num_shifter|   ; 96 (96)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 69 (69)      ; 0 (0)             ; 27 (27)          ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter    ; barrel_shifter             ; work         ;
+;                |msb_detector:master_detector| ; 18 (18)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 11 (11)          ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|msb_detector:master_detector  ; msb_detector               ; work         ;
++-----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------+
+; Delay Chain Summary                                                                      ;
++----------+----------+---------------+---------------+-----------------------+-----+------+
+; Name     ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ; TCOE ;
++----------+----------+---------------+---------------+-----------------------+-----+------+
+; uart_tx  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; led_busy ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; clk      ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
+; rst_btn  ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
+; uart_rx  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
++----------+----------+---------------+---------------+-----------------------+-----+------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                                    ;
++---------------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                                 ; Pad To Core Index ; Setting ;
++---------------------------------------------------------------------+-------------------+---------+
+; clk                                                                 ;                   ;         ;
+; rst_btn                                                             ;                   ;         ;
+; uart_rx                                                             ;                   ;         ;
+;      - UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_sync[0]~0 ; 0                 ; 6       ;
++---------------------------------------------------------------------+-------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                                                            ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++---------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|Selector1~0                     ; LCCOMB_X26_Y22_N12 ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_data[7]~1                    ; LCCOMB_X4_Y17_N8   ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_timer[4]~20                  ; LCCOMB_X2_Y17_N8   ; 9       ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_timer[8]~22                  ; LCCOMB_X2_Y17_N2   ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|tx_shifter[7]~0                 ; LCCOMB_X26_Y22_N28 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|tx_timer[6]~11                  ; LCCOMB_X26_Y22_N24 ; 9       ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; UART_16_Bit_System:U_COMMS|rx_data_16[0]~1                                      ; LCCOMB_X4_Y17_N26  ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; UART_16_Bit_System:U_COMMS|rx_data_16[15]                                       ; FF_X12_Y16_N29     ; 49      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; UART_16_Bit_System:U_COMMS|rx_temp_low[0]~0                                     ; LCCOMB_X4_Y17_N28  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; UART_16_Bit_System:U_COMMS|u8_tx_data[7]~1                                      ; LCCOMB_X26_Y17_N10 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; clk                                                                             ; PIN_23             ; 387     ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; rst_btn                                                                         ; PIN_25             ; 324     ; Async. clear ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_num~0  ; LCCOMB_X19_Y10_N4  ; 82      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|state.CALC ; FF_X19_Y10_N11     ; 102     ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; squarerootdigital:U_CORE|post_processor:U_POST|stg1_valid                       ; FF_X23_Y14_N17     ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|Equal0~10                    ; LCCOMB_X19_Y16_N0  ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|rescale_shift[0]             ; FF_X13_Y16_N25     ; 33      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; squarerootdigital:U_CORE|sig_pol_start                                          ; FF_X23_Y14_N15     ; 36      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; squarerootdigital:U_CORE|uart_data_out[13]~3                                    ; LCCOMB_X25_Y17_N20 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
++---------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                               ;
++---------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name    ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++---------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; clk     ; PIN_23   ; 387     ; 5                                    ; Global Clock         ; GCLK2            ; --                        ;
+; rst_btn ; PIN_25   ; 324     ; 0                                    ; Global Clock         ; GCLK3            ; --                        ;
++---------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                                                                                                        ;
++----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Name                                                                                                                                         ; Fan-Out ;
++----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[28]~8  ; 793     ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[20]~17 ; 784     ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[26]~3  ; 770     ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[29]~10 ; 767     ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[22]~15 ; 766     ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[21]~19 ; 753     ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[27]~6  ; 738     ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[23]~16 ; 683     ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[25]~14 ; 664     ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[24]~12 ; 651     ;
++----------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Fitter DSP Block Usage Summary                                                                ;
++---------------------------------------+-------------+---------------------+-------------------+
+; Statistic                             ; Number Used ; Available per Block ; Maximum Available ;
++---------------------------------------+-------------+---------------------+-------------------+
+; Simple Multipliers (9-bit)            ; 0           ; 2                   ; 30                ;
+; Simple Multipliers (18-bit)           ; 10          ; 1                   ; 15                ;
+; Embedded Multiplier Blocks            ; 10          ; --                  ; 15                ;
+; Embedded Multiplier 9-bit elements    ; 20          ; 2                   ; 30                ;
+; Signed Embedded Multipliers           ; 2           ; --                  ; --                ;
+; Unsigned Embedded Multipliers         ; 4           ; --                  ; --                ;
+; Mixed Sign Embedded Multipliers       ; 4           ; --                  ; --                ;
+; Variable Sign Embedded Multipliers    ; 0           ; --                  ; --                ;
+; Dedicated Input Shift Register Chains ; 0           ; --                  ; --                ;
++---------------------------------------+-------------+---------------------+-------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; DSP Block Details                                                                                                                                                                                                                                                                                                                           ;
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
+; Name                                                                                                                                         ; Mode                       ; Location           ; Sign Representation ; Has Input Shift Register Chain ; Data A Input Register ; Data B Input Register ; Pipeline Register ; Output Register ;
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
+; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_out4                                               ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y10_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult3                                           ;                            ; DSPMULT_X20_Y10_N0 ; Unsigned            ;                                ; no                    ; yes                   ; no                ;                 ;
+; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|w241w[0]                                               ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y11_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated|mac_mult1                                           ;                            ; DSPMULT_X20_Y11_N0 ; Unsigned            ;                                ; yes                   ; no                    ; no                ;                 ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0|mult_46t:auto_generated|mac_out8     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y2_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult7 ;                            ; DSPMULT_X20_Y2_N0  ; Signed              ;                                ; no                    ; no                    ; no                ;                 ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0|mult_46t:auto_generated|mac_out6     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y4_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult5 ;                            ; DSPMULT_X20_Y4_N0  ; Mixed               ;                                ; no                    ; no                    ; no                ;                 ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0|mult_46t:auto_generated|mac_out4     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y3_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ;                            ; DSPMULT_X20_Y3_N0  ; Mixed               ;                                ; no                    ; no                    ; no                ;                 ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0|mult_46t:auto_generated|w569w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y5_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ;                            ; DSPMULT_X20_Y5_N0  ; Unsigned            ;                                ; no                    ; no                    ; no                ;                 ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_out6     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y8_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult5 ;                            ; DSPMULT_X20_Y8_N0  ; Mixed               ;                                ; no                    ; no                    ; no                ;                 ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_out8     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y6_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult7 ;                            ; DSPMULT_X20_Y6_N0  ; Signed              ;                                ; no                    ; no                    ; no                ;                 ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_out4     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y7_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult3 ;                            ; DSPMULT_X20_Y7_N0  ; Mixed               ;                                ; yes                   ; no                    ; no                ;                 ;
+; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|w569w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y9_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated|mac_mult1 ;                            ; DSPMULT_X20_Y9_N0  ; Unsigned            ;                                ; yes                   ; no                    ; no                ;                 ;
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
+
+
++-------------------------------------------------+
+; Routing Usage Summary                           ;
++-----------------------+-------------------------+
+; Routing Resource Type ; Usage                   ;
++-----------------------+-------------------------+
+; Block interconnects   ; 3,907 / 32,401 ( 12 % ) ;
+; C16 interconnects     ; 38 / 1,326 ( 3 % )      ;
+; C4 interconnects      ; 1,736 / 21,816 ( 8 % )  ;
+; Direct links          ; 454 / 32,401 ( 1 % )    ;
+; Global clocks         ; 2 / 10 ( 20 % )         ;
+; Local interconnects   ; 2,468 / 10,320 ( 24 % ) ;
+; R24 interconnects     ; 41 / 1,289 ( 3 % )      ;
+; R4 interconnects      ; 1,931 / 28,186 ( 7 % )  ;
++-----------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB Logic Elements                                                          ;
++---------------------------------------------+-------------------------------+
+; Number of Logic Elements  (Average = 14.27) ; Number of LABs  (Total = 262) ;
++---------------------------------------------+-------------------------------+
+; 1                                           ; 6                             ;
+; 2                                           ; 3                             ;
+; 3                                           ; 6                             ;
+; 4                                           ; 1                             ;
+; 5                                           ; 1                             ;
+; 6                                           ; 3                             ;
+; 7                                           ; 0                             ;
+; 8                                           ; 2                             ;
+; 9                                           ; 0                             ;
+; 10                                          ; 4                             ;
+; 11                                          ; 6                             ;
+; 12                                          ; 7                             ;
+; 13                                          ; 11                            ;
+; 14                                          ; 15                            ;
+; 15                                          ; 29                            ;
+; 16                                          ; 168                           ;
++---------------------------------------------+-------------------------------+
+
+
++--------------------------------------------------------------------+
+; LAB-wide Signals                                                   ;
++------------------------------------+-------------------------------+
+; LAB-wide Signals  (Average = 0.63) ; Number of LABs  (Total = 262) ;
++------------------------------------+-------------------------------+
+; 1 Async. clear                     ; 62                            ;
+; 1 Clock                            ; 65                            ;
+; 1 Clock enable                     ; 24                            ;
+; 1 Sync. clear                      ; 2                             ;
+; 1 Sync. load                       ; 12                            ;
+; 2 Clock enables                    ; 1                             ;
++------------------------------------+-------------------------------+
+
+
++------------------------------------------------------------------------------+
+; LAB Signals Sourced                                                          ;
++----------------------------------------------+-------------------------------+
+; Number of Signals Sourced  (Average = 15.61) ; Number of LABs  (Total = 262) ;
++----------------------------------------------+-------------------------------+
+; 0                                            ; 0                             ;
+; 1                                            ; 5                             ;
+; 2                                            ; 3                             ;
+; 3                                            ; 8                             ;
+; 4                                            ; 1                             ;
+; 5                                            ; 1                             ;
+; 6                                            ; 3                             ;
+; 7                                            ; 0                             ;
+; 8                                            ; 2                             ;
+; 9                                            ; 0                             ;
+; 10                                           ; 5                             ;
+; 11                                           ; 2                             ;
+; 12                                           ; 7                             ;
+; 13                                           ; 7                             ;
+; 14                                           ; 14                            ;
+; 15                                           ; 26                            ;
+; 16                                           ; 119                           ;
+; 17                                           ; 17                            ;
+; 18                                           ; 7                             ;
+; 19                                           ; 4                             ;
+; 20                                           ; 5                             ;
+; 21                                           ; 2                             ;
+; 22                                           ; 1                             ;
+; 23                                           ; 5                             ;
+; 24                                           ; 2                             ;
+; 25                                           ; 3                             ;
+; 26                                           ; 2                             ;
+; 27                                           ; 1                             ;
+; 28                                           ; 3                             ;
+; 29                                           ; 1                             ;
+; 30                                           ; 0                             ;
+; 31                                           ; 1                             ;
+; 32                                           ; 5                             ;
++----------------------------------------------+-------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                         ;
++-------------------------------------------------+-------------------------------+
+; Number of Signals Sourced Out  (Average = 5.12) ; Number of LABs  (Total = 262) ;
++-------------------------------------------------+-------------------------------+
+; 0                                               ; 0                             ;
+; 1                                               ; 26                            ;
+; 2                                               ; 34                            ;
+; 3                                               ; 77                            ;
+; 4                                               ; 39                            ;
+; 5                                               ; 25                            ;
+; 6                                               ; 9                             ;
+; 7                                               ; 4                             ;
+; 8                                               ; 2                             ;
+; 9                                               ; 2                             ;
+; 10                                              ; 6                             ;
+; 11                                              ; 9                             ;
+; 12                                              ; 4                             ;
+; 13                                              ; 0                             ;
+; 14                                              ; 5                             ;
+; 15                                              ; 3                             ;
+; 16                                              ; 13                            ;
+; 17                                              ; 1                             ;
+; 18                                              ; 0                             ;
+; 19                                              ; 1                             ;
+; 20                                              ; 0                             ;
+; 21                                              ; 1                             ;
+; 22                                              ; 0                             ;
+; 23                                              ; 0                             ;
+; 24                                              ; 0                             ;
+; 25                                              ; 0                             ;
+; 26                                              ; 0                             ;
+; 27                                              ; 0                             ;
+; 28                                              ; 0                             ;
+; 29                                              ; 0                             ;
+; 30                                              ; 0                             ;
+; 31                                              ; 0                             ;
+; 32                                              ; 1                             ;
++-------------------------------------------------+-------------------------------+
+
+
++------------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                          ;
++----------------------------------------------+-------------------------------+
+; Number of Distinct Inputs  (Average = 13.06) ; Number of LABs  (Total = 262) ;
++----------------------------------------------+-------------------------------+
+; 0                                            ; 0                             ;
+; 1                                            ; 0                             ;
+; 2                                            ; 0                             ;
+; 3                                            ; 0                             ;
+; 4                                            ; 6                             ;
+; 5                                            ; 3                             ;
+; 6                                            ; 13                            ;
+; 7                                            ; 24                            ;
+; 8                                            ; 40                            ;
+; 9                                            ; 22                            ;
+; 10                                           ; 14                            ;
+; 11                                           ; 24                            ;
+; 12                                           ; 21                            ;
+; 13                                           ; 11                            ;
+; 14                                           ; 10                            ;
+; 15                                           ; 7                             ;
+; 16                                           ; 7                             ;
+; 17                                           ; 8                             ;
+; 18                                           ; 3                             ;
+; 19                                           ; 4                             ;
+; 20                                           ; 6                             ;
+; 21                                           ; 3                             ;
+; 22                                           ; 4                             ;
+; 23                                           ; 7                             ;
+; 24                                           ; 2                             ;
+; 25                                           ; 1                             ;
+; 26                                           ; 0                             ;
+; 27                                           ; 0                             ;
+; 28                                           ; 3                             ;
+; 29                                           ; 3                             ;
+; 30                                           ; 1                             ;
+; 31                                           ; 0                             ;
+; 32                                           ; 0                             ;
+; 33                                           ; 5                             ;
+; 34                                           ; 1                             ;
+; 35                                           ; 1                             ;
+; 36                                           ; 3                             ;
+; 37                                           ; 2                             ;
+; 38                                           ; 2                             ;
++----------------------------------------------+-------------------------------+
+
+
++------------------------------------------+
+; I/O Rules Summary                        ;
++----------------------------------+-------+
+; I/O Rules Statistic              ; Total ;
++----------------------------------+-------+
+; Total I/O Rules                  ; 30    ;
+; Number of I/O Rules Passed       ; 12    ;
+; Number of I/O Rules Failed       ; 0     ;
+; Number of I/O Rules Unchecked    ; 0     ;
+; Number of I/O Rules Inapplicable ; 18    ;
++----------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; I/O Rules Details                                                                                                                                                                                                                                                                                   ;
++--------------+-----------+-----------------------------------+------------------------------------------------------------------------------------------------------+----------+--------------------------------------------------------------------------+---------------------+-------------------+
+; Status       ; ID        ; Category                          ; Rule Description                                                                                     ; Severity ; Information                                                              ; Area                ; Extra Information ;
++--------------+-----------+-----------------------------------+------------------------------------------------------------------------------------------------------+----------+--------------------------------------------------------------------------+---------------------+-------------------+
+; Pass         ; IO_000001 ; Capacity Checks                   ; Number of pins in an I/O bank should not exceed the number of locations available.                   ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000002 ; Capacity Checks                   ; Number of clocks in an I/O bank should not exceed the number of clocks available.                    ; Critical ; No Global Signal assignments found.                                      ; I/O                 ;                   ;
+; Pass         ; IO_000003 ; Capacity Checks                   ; Number of pins in a Vrefgroup should not exceed the number of locations available.                   ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000004 ; Voltage Compatibility Checks      ; The I/O bank should support the requested VCCIO.                                                     ; Critical ; No IOBANK_VCCIO assignments found.                                       ; I/O                 ;                   ;
+; Inapplicable ; IO_000005 ; Voltage Compatibility Checks      ; The I/O bank should not have competing VREF values.                                                  ; Critical ; No VREF I/O Standard assignments found.                                  ; I/O                 ;                   ;
+; Pass         ; IO_000006 ; Voltage Compatibility Checks      ; The I/O bank should not have competing VCCIO values.                                                 ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Pass         ; IO_000007 ; Valid Location Checks             ; Checks for unavailable locations.                                                                    ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000008 ; Valid Location Checks             ; Checks for reserved locations.                                                                       ; Critical ; No reserved LogicLock region found.                                      ; I/O                 ;                   ;
+; Pass         ; IO_000009 ; I/O Properties Checks for One I/O ; The location should support the requested I/O standard.                                              ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Pass         ; IO_000010 ; I/O Properties Checks for One I/O ; The location should support the requested I/O direction.                                             ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000011 ; I/O Properties Checks for One I/O ; The location should support the requested Current Strength.                                          ; Critical ; No Current Strength assignments found.                                   ; I/O                 ;                   ;
+; Pass         ; IO_000012 ; I/O Properties Checks for One I/O ; The location should support the requested On Chip Termination value.                                 ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000013 ; I/O Properties Checks for One I/O ; The location should support the requested Bus Hold value.                                            ; Critical ; No Enable Bus-Hold Circuitry assignments found.                          ; I/O                 ;                   ;
+; Inapplicable ; IO_000014 ; I/O Properties Checks for One I/O ; The location should support the requested Weak Pull Up value.                                        ; Critical ; No Weak Pull-Up Resistor assignments found.                              ; I/O                 ;                   ;
+; Pass         ; IO_000015 ; I/O Properties Checks for One I/O ; The location should support the requested PCI Clamp Diode.                                           ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000018 ; I/O Properties Checks for One I/O ; The I/O standard should support the requested Current Strength.                                      ; Critical ; No Current Strength assignments found.                                   ; I/O                 ;                   ;
+; Pass         ; IO_000019 ; I/O Properties Checks for One I/O ; The I/O standard should support the requested On Chip Termination value.                             ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Pass         ; IO_000020 ; I/O Properties Checks for One I/O ; The I/O standard should support the requested PCI Clamp Diode.                                       ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000021 ; I/O Properties Checks for One I/O ; The I/O standard should support the requested Weak Pull Up value.                                    ; Critical ; No Weak Pull-Up Resistor assignments found.                              ; I/O                 ;                   ;
+; Inapplicable ; IO_000022 ; I/O Properties Checks for One I/O ; The I/O standard should support the requested Bus Hold value.                                        ; Critical ; No Enable Bus-Hold Circuitry assignments found.                          ; I/O                 ;                   ;
+; Inapplicable ; IO_000023 ; I/O Properties Checks for One I/O ; The I/O standard should support the Open Drain value.                                                ; Critical ; No open drain assignments found.                                         ; I/O                 ;                   ;
+; Pass         ; IO_000024 ; I/O Properties Checks for One I/O ; The I/O direction should support the On Chip Termination value.                                      ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000026 ; I/O Properties Checks for One I/O ; On Chip Termination and Current Strength should not be used at the same time.                        ; Critical ; No Current Strength assignments found.                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000027 ; I/O Properties Checks for One I/O ; Weak Pull Up and Bus Hold should not be used at the same time.                                       ; Critical ; No Enable Bus-Hold Circuitry or Weak Pull-Up Resistor assignments found. ; I/O                 ;                   ;
+; Inapplicable ; IO_000045 ; I/O Properties Checks for One I/O ; The I/O standard should support the requested Slew Rate value.                                       ; Critical ; No Slew Rate assignments found.                                          ; I/O                 ;                   ;
+; Inapplicable ; IO_000046 ; I/O Properties Checks for One I/O ; The location should support the requested Slew Rate value.                                           ; Critical ; No Slew Rate assignments found.                                          ; I/O                 ;                   ;
+; Inapplicable ; IO_000047 ; I/O Properties Checks for One I/O ; On Chip Termination and Slew Rate should not be used at the same time.                               ; Critical ; No Slew Rate assignments found.                                          ; I/O                 ;                   ;
+; Pass         ; IO_000033 ; Electromigration Checks           ; Current density for consecutive I/Os should not exceed 240mA for row I/Os and 240mA for column I/Os. ; Critical ; 0 such failures found.                                                   ; I/O                 ;                   ;
+; Inapplicable ; IO_000034 ; SI Related Distance Checks        ; Single-ended outputs should be 5 LAB row(s) away from a differential I/O.                            ; High     ; No Differential I/O Standard assignments found.                          ; I/O                 ;                   ;
+; Inapplicable ; IO_000042 ; SI Related SSO Limit Checks       ; No more than 20 outputs are allowed in a VREF group when VREF is being read from.                    ; High     ; No VREF I/O Standard assignments found.                                  ; I/O                 ;                   ;
+; ----         ; ----      ; Disclaimer                        ; OCT rules are checked but not reported.                                                              ; None     ; ----                                                                     ; On Chip Termination ;                   ;
++--------------+-----------+-----------------------------------+------------------------------------------------------------------------------------------------------+----------+--------------------------------------------------------------------------+---------------------+-------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; I/O Rules Matrix                                                                                                                                                                                                                                                                                                                                                                                                                                                ;
++--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
+; Pin/Rules          ; IO_000001 ; IO_000002    ; IO_000003 ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007 ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
++--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
+; Total Pass         ; 5         ; 0            ; 5         ; 0            ; 0            ; 5         ; 5         ; 0            ; 5         ; 5         ; 0            ; 2            ; 0            ; 0            ; 3            ; 0            ; 2            ; 3            ; 0            ; 0            ; 0            ; 2            ; 0            ; 0            ; 0            ; 0            ; 0            ; 5         ; 0            ; 0            ;
+; Total Unchecked    ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
+; Total Inapplicable ; 0         ; 5            ; 0         ; 5            ; 5            ; 0         ; 0         ; 5            ; 0         ; 0         ; 5            ; 3            ; 5            ; 5            ; 2            ; 5            ; 3            ; 2            ; 5            ; 5            ; 5            ; 3            ; 5            ; 5            ; 5            ; 5            ; 5            ; 0         ; 5            ; 5            ;
+; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
+; uart_tx            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; led_busy           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; clk                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; rst_btn            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; uart_rx            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
++--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Fitter Device Options                                                                       ;
++------------------------------------------------------------------+--------------------------+
+; Option                                                           ; Setting                  ;
++------------------------------------------------------------------+--------------------------+
+; Enable user-supplied start-up clock (CLKUSR)                     ; Off                      ;
+; Enable device-wide reset (DEV_CLRn)                              ; Off                      ;
+; Enable device-wide output enable (DEV_OE)                        ; Off                      ;
+; Enable INIT_DONE output                                          ; Off                      ;
+; Configuration scheme                                             ; Active Serial            ;
+; Error detection CRC                                              ; Off                      ;
+; Enable open drain on CRC_ERROR pin                               ; Off                      ;
+; Enable input tri-state on active configuration pins in user mode ; Off                      ;
+; Configuration Voltage Level                                      ; Auto                     ;
+; Force Configuration Voltage Level                                ; Off                      ;
+; nCEO                                                             ; As output driving ground ;
+; Data[0]                                                          ; As input tri-stated      ;
+; Data[1]/ASDO                                                     ; As input tri-stated      ;
+; Data[7..2]                                                       ; Unreserved               ;
+; FLASH_nCE/nCSO                                                   ; As input tri-stated      ;
+; Other Active Parallel pins                                       ; Unreserved               ;
+; DCLK                                                             ; As output driving ground ;
++------------------------------------------------------------------+--------------------------+
+
+
++------------------------------------+
+; Operating Settings and Conditions  ;
++---------------------------+--------+
+; Setting                   ; Value  ;
++---------------------------+--------+
+; Nominal Core Voltage      ; 1.20 V ;
+; Low Junction Temperature  ; 0 °C   ;
+; High Junction Temperature ; 85 °C  ;
++---------------------------+--------+
+
+
++------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary              ;
++-----------------+----------------------+-------------------+
+; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
++-----------------+----------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                             ;
++--------------------------------------------+------------------------------------------+-------------------+
+; Source Register                            ; Destination Register                     ; Delay Added in ns ;
++--------------------------------------------+------------------------------------------+-------------------+
+; squarerootdigital:U_CORE|uart_data_out[13] ; UART_16_Bit_System:U_COMMS|u8_tx_data[5] ; 0.034             ;
+; squarerootdigital:U_CORE|uart_data_out[14] ; UART_16_Bit_System:U_COMMS|u8_tx_data[6] ; 0.034             ;
+; squarerootdigital:U_CORE|uart_data_out[12] ; UART_16_Bit_System:U_COMMS|u8_tx_data[4] ; 0.034             ;
+; squarerootdigital:U_CORE|uart_data_out[15] ; UART_16_Bit_System:U_COMMS|u8_tx_data[7] ; 0.034             ;
+; squarerootdigital:U_CORE|uart_data_out[10] ; UART_16_Bit_System:U_COMMS|u8_tx_data[2] ; 0.034             ;
+; squarerootdigital:U_CORE|uart_data_out[9]  ; UART_16_Bit_System:U_COMMS|u8_tx_data[1] ; 0.034             ;
+; squarerootdigital:U_CORE|uart_data_out[8]  ; UART_16_Bit_System:U_COMMS|u8_tx_data[0] ; 0.034             ;
+; squarerootdigital:U_CORE|uart_data_out[11] ; UART_16_Bit_System:U_COMMS|u8_tx_data[3] ; 0.034             ;
++--------------------------------------------+------------------------------------------+-------------------+
+Note: This table only shows the top 8 path(s) that have the largest delay added for hold.
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (119006): Selected device EP4CE6E22C8 for design "top_squarerootdigital_uart"
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
+Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info (176445): Device EP4CE10E22C8 is compatible
+    Info (176445): Device EP4CE15E22C8 is compatible
+    Info (176445): Device EP4CE22E22C8 is compatible
+Info (169124): Fitter converted 5 user pins into dedicated programming pins
+    Info (169125): Pin ~ALTERA_ASDO_DATA1~ is reserved at location 6
+    Info (169125): Pin ~ALTERA_FLASH_nCE_nCSO~ is reserved at location 8
+    Info (169125): Pin ~ALTERA_DCLK~ is reserved at location 12
+    Info (169125): Pin ~ALTERA_DATA0~ is reserved at location 13
+    Info (169125): Pin ~ALTERA_nCEO~ is reserved at location 101
+Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
+Info (332104): Reading SDC File: 'src/top_squarerootdigital_uart.sdc'
+Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
+Info (332111): Found 1 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):   20.000          clk
+Info (176353): Automatically promoted node clk~input (placed in PIN 23 (CLK1, DIFFCLK_0n)) File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/top_squarerootdigital_uart.vhd Line: 6
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
+Info (176353): Automatically promoted node rst_btn~input (placed in PIN 25 (CLK3, DIFFCLK_1n)) File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/top_squarerootdigital_uart.vhd Line: 7
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G3
+    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
+        Info (176357): Destination node UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|tx_shifter[7]~0 File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_8_Bit.vhd Line: 49
+        Info (176357): Destination node UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|tx_bit_idx[2]~1 File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_8_Bit.vhd Line: 49
+        Info (176357): Destination node UART_16_Bit_System:U_COMMS|u8_tx_data[7]~1 File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_16_Bit_System.vhd Line: 71
+        Info (176357): Destination node UART_16_Bit_System:U_COMMS|rx_data_16[0]~1 File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_16_Bit_System.vhd Line: 120
+        Info (176357): Destination node UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_data[7]~1 File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_8_Bit.vhd Line: 107
+        Info (176357): Destination node UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_timer[8]~22 File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_8_Bit.vhd Line: 107
+        Info (176357): Destination node UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|Decoder0~0 File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_8_Bit.vhd Line: 138
+        Info (176357): Destination node UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_bit_idx[2]~4 File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_8_Bit.vhd Line: 107
+Info (176233): Starting register packing
+Info (176235): Finished register packing
+    Extra Info (176218): Packed 68 registers into blocks of type Embedded multiplier block
+    Extra Info (176220): Created 50 register duplicates
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
+Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
+Info (170189): Fitter placement preparation operations beginning
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
+Info (170191): Fitter placement operations beginning
+Info (170137): Fitter placement was successful
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
+Info (170193): Fitter routing operations beginning
+Info (170195): Router estimated average interconnect usage is 6% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 16% of the available device resources in the region that extends from location X11_Y0 to location X22_Y11
+Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
+    Info (170201): Optimizations that may affect the design's routability were skipped
+    Info (170200): Optimizations that may affect the design's timing were skipped
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
+Info (11888): Total time spent on timing analysis during the Fitter is 1.53 seconds.
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (144001): Generated suppressed messages file D:/Quartus/Sistem Digital/Square-Root-Digital-main/output_files/top_squarerootdigital_uart.fit.smsg
+Info: Quartus Prime Fitter was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 5596 megabytes
+    Info: Processing ended: Wed Dec 31 09:58:27 2025
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:10
+
+
++----------------------------+
+; Fitter Suppressed Messages ;
++----------------------------+
+The suppressed messages can be found in D:/Quartus/Sistem Digital/Square-Root-Digital-main/output_files/top_squarerootdigital_uart.fit.smsg.
+
+

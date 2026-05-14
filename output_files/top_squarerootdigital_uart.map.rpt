@@ -1,0 +1,809 @@
+Analysis & Synthesis report for top_squarerootdigital_uart
+Wed Dec 31 09:58:04 2025
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |top_squarerootdigital_uart|squarerootdigital:U_CORE|state
+ 10. State Machine - |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|state
+ 11. State Machine - |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|tx_state
+ 12. State Machine - |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_state
+ 13. State Machine - |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|tx_state
+ 14. Registers Removed During Synthesis
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Parameter Settings for User Entity Instance: UART_16_Bit_System:U_COMMS
+ 19. Parameter Settings for User Entity Instance: UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE
+ 20. Parameter Settings for Inferred Entity Instance: squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0
+ 21. Parameter Settings for Inferred Entity Instance: squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0
+ 22. Parameter Settings for Inferred Entity Instance: squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0
+ 23. lpm_mult Parameter Settings by Entity Instance
+ 24. Port Connectivity Checks: "squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Dec 31 09:58:04 2025           ;
+; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                      ; top_squarerootdigital_uart                      ;
+; Top-level Entity Name              ; top_squarerootdigital_uart                      ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 3,758                                           ;
+;     Total combinational functions  ; 3,713                                           ;
+;     Dedicated logic registers      ; 401                                             ;
+; Total registers                    ; 401                                             ;
+; Total pins                         ; 5                                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 20                                              ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                              ;
++------------------------------------------------------------------+----------------------------+----------------------------+
+; Option                                                           ; Setting                    ; Default Value              ;
++------------------------------------------------------------------+----------------------------+----------------------------+
+; Device                                                           ; EP4CE6E22C8                ;                            ;
+; Top-level entity name                                            ; top_squarerootdigital_uart ; top_squarerootdigital_uart ;
+; Family name                                                      ; Cyclone IV E               ; Cyclone V                  ;
+; Use smart compilation                                            ; Off                        ; Off                        ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                         ; On                         ;
+; Enable compact report table                                      ; Off                        ; Off                        ;
+; Restructure Multiplexers                                         ; Auto                       ; Auto                       ;
+; Create Debugging Nodes for IP Cores                              ; Off                        ; Off                        ;
+; Preserve fewer node names                                        ; On                         ; On                         ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable                     ; Enable                     ;
+; Verilog Version                                                  ; Verilog_2001               ; Verilog_2001               ;
+; VHDL Version                                                     ; VHDL_1993                  ; VHDL_1993                  ;
+; State Machine Processing                                         ; Auto                       ; Auto                       ;
+; Safe State Machine                                               ; Off                        ; Off                        ;
+; Extract Verilog State Machines                                   ; On                         ; On                         ;
+; Extract VHDL State Machines                                      ; On                         ; On                         ;
+; Ignore Verilog initial constructs                                ; Off                        ; Off                        ;
+; Iteration limit for constant Verilog loops                       ; 5000                       ; 5000                       ;
+; Iteration limit for non-constant Verilog loops                   ; 250                        ; 250                        ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                         ; On                         ;
+; Infer RAMs from Raw Logic                                        ; On                         ; On                         ;
+; Parallel Synthesis                                               ; On                         ; On                         ;
+; DSP Block Balancing                                              ; Auto                       ; Auto                       ;
+; NOT Gate Push-Back                                               ; On                         ; On                         ;
+; Power-Up Don't Care                                              ; On                         ; On                         ;
+; Remove Redundant Logic Cells                                     ; Off                        ; Off                        ;
+; Remove Duplicate Registers                                       ; On                         ; On                         ;
+; Ignore CARRY Buffers                                             ; Off                        ; Off                        ;
+; Ignore CASCADE Buffers                                           ; Off                        ; Off                        ;
+; Ignore GLOBAL Buffers                                            ; Off                        ; Off                        ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                        ; Off                        ;
+; Ignore LCELL Buffers                                             ; Off                        ; Off                        ;
+; Ignore SOFT Buffers                                              ; On                         ; On                         ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                        ; Off                        ;
+; Optimization Technique                                           ; Balanced                   ; Balanced                   ;
+; Carry Chain Length                                               ; 70                         ; 70                         ;
+; Auto Carry Chains                                                ; On                         ; On                         ;
+; Auto Open-Drain Pins                                             ; On                         ; On                         ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                        ; Off                        ;
+; Auto ROM Replacement                                             ; On                         ; On                         ;
+; Auto RAM Replacement                                             ; On                         ; On                         ;
+; Auto DSP Block Replacement                                       ; On                         ; On                         ;
+; Auto Shift Register Replacement                                  ; Auto                       ; Auto                       ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                       ; Auto                       ;
+; Auto Clock Enable Replacement                                    ; On                         ; On                         ;
+; Strict RAM Replacement                                           ; Off                        ; Off                        ;
+; Allow Synchronous Control Signals                                ; On                         ; On                         ;
+; Force Use of Synchronous Clear Signals                           ; Off                        ; Off                        ;
+; Auto RAM Block Balancing                                         ; On                         ; On                         ;
+; Auto RAM to Logic Cell Conversion                                ; Off                        ; Off                        ;
+; Auto Resource Sharing                                            ; Off                        ; Off                        ;
+; Allow Any RAM Size For Recognition                               ; Off                        ; Off                        ;
+; Allow Any ROM Size For Recognition                               ; Off                        ; Off                        ;
+; Allow Any Shift Register Size For Recognition                    ; Off                        ; Off                        ;
+; Use LogicLock Constraints during Resource Balancing              ; On                         ; On                         ;
+; Ignore translate_off and synthesis_off directives                ; Off                        ; Off                        ;
+; Timing-Driven Synthesis                                          ; On                         ; On                         ;
+; Report Parameter Settings                                        ; On                         ; On                         ;
+; Report Source Assignments                                        ; On                         ; On                         ;
+; Report Connectivity Checks                                       ; On                         ; On                         ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                        ; Off                        ;
+; Synchronization Register Chain Length                            ; 2                          ; 2                          ;
+; Power Optimization During Synthesis                              ; Normal compilation         ; Normal compilation         ;
+; HDL message level                                                ; Level2                     ; Level2                     ;
+; Suppress Register Optimization Related Messages                  ; Off                        ; Off                        ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                       ; 5000                       ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                       ; 5000                       ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                        ; 100                        ;
+; Clock MUX Protection                                             ; On                         ; On                         ;
+; Auto Gated Clock Conversion                                      ; Off                        ; Off                        ;
+; Block Design Naming                                              ; Auto                       ; Auto                       ;
+; SDC constraint protection                                        ; Off                        ; Off                        ;
+; Synthesis Effort                                                 ; Auto                       ; Auto                       ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                         ; On                         ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                        ; Off                        ;
+; Analysis & Synthesis Message Level                               ; Medium                     ; Medium                     ;
+; Disable Register Merging Across Hierarchies                      ; Auto                       ; Auto                       ;
+; Resource Aware Inference For Block RAM                           ; On                         ; On                         ;
++------------------------------------------------------------------+----------------------------+----------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path   ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
++------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; src/UART_16_Bit_System.vhd         ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_16_Bit_System.vhd         ;         ;
+; src/UART_8_Bit.vhd                 ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_8_Bit.vhd                 ;         ;
+; src/top_squarerootdigital_uart.vhd ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/top_squarerootdigital_uart.vhd ;         ;
+; src/squarerootdigital.vhd          ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/squarerootdigital.vhd          ;         ;
+; src/seed_generator.vhd             ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/seed_generator.vhd             ;         ;
+; src/pre_processor.vhd              ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/pre_processor.vhd              ;         ;
+; src/post_processor.vhd             ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/post_processor.vhd             ;         ;
+; src/nr_polisher.vhd                ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/nr_polisher.vhd                ;         ;
+; src/nr_initial_guess.vhd           ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/nr_initial_guess.vhd           ;         ;
+; src/normaliser_top.vhd             ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/normaliser_top.vhd             ;         ;
+; src/multiplier.vhd                 ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/multiplier.vhd                 ;         ;
+; src/msb_detector.vhd               ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/msb_detector.vhd               ;         ;
+; src/gs_initial_guess.vhd           ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/gs_initial_guess.vhd           ;         ;
+; src/goldschmidt.vhd                ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/goldschmidt.vhd                ;         ;
+; src/divider.vhd                    ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/divider.vhd                    ;         ;
+; src/barrel_shifter.vhd             ; yes             ; User VHDL File               ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/barrel_shifter.vhd             ;         ;
+; lpm_mult.tdf                       ; yes             ; Megafunction                 ; c:/intel/quartus/libraries/megafunctions/lpm_mult.tdf                                 ;         ;
+; aglobal251.inc                     ; yes             ; Megafunction                 ; c:/intel/quartus/libraries/megafunctions/aglobal251.inc                               ;         ;
+; lpm_add_sub.inc                    ; yes             ; Megafunction                 ; c:/intel/quartus/libraries/megafunctions/lpm_add_sub.inc                              ;         ;
+; multcore.inc                       ; yes             ; Megafunction                 ; c:/intel/quartus/libraries/megafunctions/multcore.inc                                 ;         ;
+; bypassff.inc                       ; yes             ; Megafunction                 ; c:/intel/quartus/libraries/megafunctions/bypassff.inc                                 ;         ;
+; altshift.inc                       ; yes             ; Megafunction                 ; c:/intel/quartus/libraries/megafunctions/altshift.inc                                 ;         ;
+; db/mult_vgt.tdf                    ; yes             ; Auto-Generated Megafunction  ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/db/mult_vgt.tdf                    ;         ;
+; db/mult_46t.tdf                    ; yes             ; Auto-Generated Megafunction  ; D:/Quartus/Sistem Digital/Square-Root-Digital-main/db/mult_46t.tdf                    ;         ;
++------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                                                               ;
++---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                                                                       ;
++---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 3,758                                                                                                                                       ;
+;                                             ;                                                                                                                                             ;
+; Total combinational functions               ; 3713                                                                                                                                        ;
+; Logic element usage by number of LUT inputs ;                                                                                                                                             ;
+;     -- 4 input functions                    ; 2935                                                                                                                                        ;
+;     -- 3 input functions                    ; 495                                                                                                                                         ;
+;     -- <=2 input functions                  ; 283                                                                                                                                         ;
+;                                             ;                                                                                                                                             ;
+; Logic elements by mode                      ;                                                                                                                                             ;
+;     -- normal mode                          ; 3324                                                                                                                                        ;
+;     -- arithmetic mode                      ; 389                                                                                                                                         ;
+;                                             ;                                                                                                                                             ;
+; Total registers                             ; 401                                                                                                                                         ;
+;     -- Dedicated logic registers            ; 401                                                                                                                                         ;
+;     -- I/O registers                        ; 0                                                                                                                                           ;
+;                                             ;                                                                                                                                             ;
+; I/O pins                                    ; 5                                                                                                                                           ;
+;                                             ;                                                                                                                                             ;
+; Embedded Multiplier 9-bit elements          ; 20                                                                                                                                          ;
+;                                             ;                                                                                                                                             ;
+; Maximum fan-out node                        ; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[28]~8 ;
+; Maximum fan-out                             ; 793                                                                                                                                         ;
+; Total fan-out                               ; 15651                                                                                                                                       ;
+; Average fan-out                             ; 3.78                                                                                                                                        ;
++---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                         ; Entity Name                ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; |top_squarerootdigital_uart                   ; 3713 (1)            ; 401 (0)                   ; 0           ; 20           ; 0       ; 10        ; 5    ; 0            ; |top_squarerootdigital_uart                                                                                                                                 ; top_squarerootdigital_uart ; work         ;
+;    |UART_16_Bit_System:U_COMMS|               ; 114 (27)            ; 102 (41)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS                                                                                                      ; UART_16_Bit_System         ; work         ;
+;       |UART_8_Bit:UART_CORE|                  ; 87 (87)             ; 61 (61)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE                                                                                 ; UART_8_Bit                 ; work         ;
+;    |squarerootdigital:U_CORE|                 ; 3598 (38)           ; 299 (26)                  ; 0           ; 20           ; 0       ; 10        ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE                                                                                                        ; squarerootdigital          ; work         ;
+;       |divider:U_DIVIDER|                     ; 659 (0)             ; 103 (0)                   ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER                                                                                      ; divider                    ; work         ;
+;          |goldschmidt:U_GOLDSCHMIDT|          ; 345 (105)           ; 103 (103)                 ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT                                                            ; goldschmidt                ; work         ;
+;             |multiplier:mult_den|             ; 120 (32)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den                                        ; multiplier                 ; work         ;
+;                |lpm_mult:Mult0|               ; 88 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0                         ; lpm_mult                   ; work         ;
+;                   |mult_46t:auto_generated|   ; 88 (88)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0|mult_46t:auto_generated ; mult_46t                   ; work         ;
+;             |multiplier:mult_num|             ; 120 (32)            ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num                                        ; multiplier                 ; work         ;
+;                |lpm_mult:Mult0|               ; 88 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0                         ; lpm_mult                   ; work         ;
+;                   |mult_46t:auto_generated|   ; 88 (88)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0|mult_46t:auto_generated ; mult_46t                   ; work         ;
+;          |gs_initial_guess:U_ROM|             ; 314 (314)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|gs_initial_guess:U_ROM                                                               ; gs_initial_guess           ; work         ;
+;       |nr_polisher:U_POLISHER|                ; 33 (33)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|nr_polisher:U_POLISHER                                                                                 ; nr_polisher                ; work         ;
+;       |post_processor:U_POST|                 ; 224 (194)           ; 56 (56)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|post_processor:U_POST                                                                                  ; post_processor             ; work         ;
+;          |lpm_mult:Mult0|                     ; 30 (0)              ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0                                                                   ; lpm_mult                   ; work         ;
+;             |mult_vgt:auto_generated|         ; 30 (30)             ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0|mult_vgt:auto_generated                                           ; mult_vgt                   ; work         ;
+;       |seed_generator:U_SEED_GEN|             ; 2644 (34)           ; 81 (81)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN                                                                              ; seed_generator             ; work         ;
+;          |nr_initial_guess:U_NR_ROM|          ; 2496 (2496)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|nr_initial_guess:U_NR_ROM                                                    ; nr_initial_guess           ; work         ;
+;          |pre_processor:U_PRE_PROC|           ; 114 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC                                                     ; pre_processor              ; work         ;
+;             |normaliser_top:U_NORM|           ; 114 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM                               ; normaliser_top             ; work         ;
+;                |barrel_shifter:num_shifter|   ; 96 (96)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter    ; barrel_shifter             ; work         ;
+;                |msb_detector:master_detector| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|msb_detector:master_detector  ; msb_detector               ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 10          ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 20          ;
+; Signed Embedded Multipliers           ; 2           ;
+; Unsigned Embedded Multipliers         ; 4           ;
+; Mixed Sign Embedded Multipliers       ; 4           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------+
+; State Machine - |top_squarerootdigital_uart|squarerootdigital:U_CORE|state                                 ;
++-----------------+------------+-----------------+--------------+--------------+----------------+------------+
+; Name            ; state.SEND ; state.POST_PROC ; state.POLISH ; state.DIVIDE ; state.PRE_PROC ; state.IDLE ;
++-----------------+------------+-----------------+--------------+--------------+----------------+------------+
+; state.IDLE      ; 0          ; 0               ; 0            ; 0            ; 0              ; 0          ;
+; state.PRE_PROC  ; 0          ; 0               ; 0            ; 0            ; 1              ; 1          ;
+; state.DIVIDE    ; 0          ; 0               ; 0            ; 1            ; 0              ; 1          ;
+; state.POLISH    ; 0          ; 0               ; 1            ; 0            ; 0              ; 1          ;
+; state.POST_PROC ; 0          ; 1               ; 0            ; 0            ; 0              ; 1          ;
+; state.SEND      ; 1          ; 0               ; 0            ; 0            ; 0              ; 1          ;
++-----------------+------------+-----------------+--------------+--------------+----------------+------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|state ;
++------------+------------+------------+------------+--------------------------------------------------------------------+
+; Name       ; state.DONE ; state.CALC ; state.INIT ; state.IDLE                                                         ;
++------------+------------+------------+------------+--------------------------------------------------------------------+
+; state.IDLE ; 0          ; 0          ; 0          ; 0                                                                  ;
+; state.INIT ; 0          ; 0          ; 1          ; 1                                                                  ;
+; state.CALC ; 0          ; 1          ; 0          ; 1                                                                  ;
+; state.DONE ; 1          ; 0          ; 0          ; 1                                                                  ;
++------------+------------+------------+------------+--------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|tx_state                                      ;
++--------------------+--------------------+--------------------+-------------------+-------------------+---------------+
+; Name               ; tx_state.WAIT_HIGH ; tx_state.SEND_HIGH ; tx_state.WAIT_LOW ; tx_state.SEND_LOW ; tx_state.IDLE ;
++--------------------+--------------------+--------------------+-------------------+-------------------+---------------+
+; tx_state.IDLE      ; 0                  ; 0                  ; 0                 ; 0                 ; 0             ;
+; tx_state.SEND_LOW  ; 0                  ; 0                  ; 0                 ; 1                 ; 1             ;
+; tx_state.WAIT_LOW  ; 0                  ; 0                  ; 1                 ; 0                 ; 1             ;
+; tx_state.SEND_HIGH ; 0                  ; 1                  ; 0                 ; 0                 ; 1             ;
+; tx_state.WAIT_HIGH ; 1                  ; 0                  ; 0                 ; 0                 ; 1             ;
++--------------------+--------------------+--------------------+-------------------+-------------------+---------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------+
+; State Machine - |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_state ;
++----------------+---------------+---------------+----------------+------------------------------------+
+; Name           ; rx_state.STOP ; rx_state.DATA ; rx_state.START ; rx_state.IDLE                      ;
++----------------+---------------+---------------+----------------+------------------------------------+
+; rx_state.IDLE  ; 0             ; 0             ; 0              ; 0                                  ;
+; rx_state.START ; 0             ; 0             ; 1              ; 1                                  ;
+; rx_state.DATA  ; 0             ; 1             ; 0              ; 1                                  ;
+; rx_state.STOP  ; 1             ; 0             ; 0              ; 1                                  ;
++----------------+---------------+---------------+----------------+------------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------+
+; State Machine - |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|tx_state ;
++----------------+---------------+---------------+----------------+------------------------------------+
+; Name           ; tx_state.STOP ; tx_state.DATA ; tx_state.START ; tx_state.IDLE                      ;
++----------------+---------------+---------------+----------------+------------------------------------+
+; tx_state.IDLE  ; 0             ; 0             ; 0              ; 0                                  ;
+; tx_state.START ; 0             ; 0             ; 1              ; 1                                  ;
+; tx_state.DATA  ; 0             ; 1             ; 0              ; 1                                  ;
+; tx_state.STOP  ; 1             ; 0             ; 0              ; 1                                  ;
++----------------+---------------+---------------+----------------+------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                          ;
++--------------------------------------------------------------------+----------------------------------------+
+; Register name                                                      ; Reason for Removal                     ;
++--------------------------------------------------------------------+----------------------------------------+
+; squarerootdigital:U_CORE|post_processor:U_POST|stg1_val[33..47]    ; Stuck at GND due to stuck port data_in ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|seed[29,31]     ; Stuck at GND due to stuck port data_in ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|data_norm[0..2] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 20                             ;                                        ;
++--------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 401   ;
+; Number of registers using Synchronous Clear  ; 18    ;
+; Number of registers using Synchronous Load   ; 99    ;
+; Number of registers using Asynchronous Clear ; 338   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 239   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------+
+; Inverted Register Statistics                                                ;
++-------------------------------------------------------------------+---------+
+; Inverted Register                                                 ; Fan out ;
++-------------------------------------------------------------------+---------+
+; UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|tx_pin            ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[0]  ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[1]  ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[3]  ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[2]  ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[5]  ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[4]  ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[7]  ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[6]  ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[11] ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[10] ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[9]  ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[8]  ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[12] ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[13] ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[14] ; 1       ;
+; squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|last_input[15] ; 1       ;
+; UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_sync[1]        ; 14      ;
+; UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_sync[0]        ; 1       ;
+; Total number of inverted registers = 19                           ;         ;
++-------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|data_norm[18]                                                                          ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|data_norm[10]                                                                          ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|uart_data_out[13]                                                                                                ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_bit_idx[1]                                                                             ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|tx_bit_idx[0]                                                                             ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|data_norm[7]                                                                           ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|u8_tx_data[3]                                                                                                  ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|data_norm[2]                                                                           ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|tx_timer[6]                                                                               ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|data_norm[0]                                                                           ;
+; 7:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|rx_timer[4]                                                                               ;
+; 3:1                ; 61 bits   ; 122 LEs       ; 61 LEs               ; 61 LEs                 ; Yes        ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_den[17]                                                          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|reg_num[25]                                                          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|msb_detector:master_detector|temp       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|post_processor:U_POST|ShiftRight0                                                                                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[29] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:num_shifter|data_out[22] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|post_processor:U_POST|ShiftRight0                                                                                ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|post_processor:U_POST|ShiftRight0                                                                                ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|Selector3                                                            ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|Selector4                                                                                 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|Selector21                                                                                ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|Selector20                                                                                ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE|Selector3                                                                                 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|Selector14                                                                                                     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |top_squarerootdigital_uart|UART_16_Bit_System:U_COMMS|Selector13                                                                                                     ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|Selector17                                                                                                       ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 6 LEs                ; 8 LEs                  ; No         ; |top_squarerootdigital_uart|squarerootdigital:U_CORE|Selector22                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_16_Bit_System:U_COMMS ;
++----------------+----------+---------------------------------------------+
+; Parameter Name ; Value    ; Type                                        ;
++----------------+----------+---------------------------------------------+
+; clk_freq       ; 50000000 ; Signed Integer                              ;
+; baud_rate      ; 115200   ; Signed Integer                              ;
++----------------+----------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE ;
++----------------+----------+------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                             ;
++----------------+----------+------------------------------------------------------------------+
+; clk_freq       ; 50000000 ; Signed Integer                                                   ;
+; baud_rate      ; 115200   ; Signed Integer                                                   ;
++----------------+----------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                           ;
++------------------------------------------------+--------------+------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                 ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                                        ;
+; LPM_WIDTHB                                     ; 16           ; Untyped                                        ;
+; LPM_WIDTHP                                     ; 48           ; Untyped                                        ;
+; LPM_WIDTHR                                     ; 48           ; Untyped                                        ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                        ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                        ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                        ;
+; LATENCY                                        ; 0            ; Untyped                                        ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                        ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                                        ;
+; USE_EAB                                        ; OFF          ; Untyped                                        ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                        ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                        ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                        ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                            ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                        ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                        ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                        ;
+; CBXI_PARAMETER                                 ; mult_vgt     ; Untyped                                        ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                        ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                        ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                        ;
++------------------------------------------------+--------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+------------------------------------------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                                                     ;
++------------------------------------------------+--------------+------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                                                               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                                                             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                                                             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                                                           ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                                                                                  ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                                                                                  ;
+; LPM_WIDTHP                                     ; 64           ; Untyped                                                                                  ;
+; LPM_WIDTHR                                     ; 64           ; Untyped                                                                                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                                                  ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                                                                                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                                                  ;
+; LATENCY                                        ; 0            ; Untyped                                                                                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                                                                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                                                                  ;
+; USE_EAB                                        ; OFF          ; Untyped                                                                                  ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                                                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                                                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                                                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                                                      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                                                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                                                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                                                  ;
+; CBXI_PARAMETER                                 ; mult_46t     ; Untyped                                                                                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                                                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                                                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                                                  ;
++------------------------------------------------+--------------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+------------------------------------------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                                                     ;
++------------------------------------------------+--------------+------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                                                               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                                                             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                                                             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                                                           ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                                                                                  ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                                                                                  ;
+; LPM_WIDTHP                                     ; 64           ; Untyped                                                                                  ;
+; LPM_WIDTHR                                     ; 64           ; Untyped                                                                                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                                                  ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                                                                                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                                                  ;
+; LATENCY                                        ; 0            ; Untyped                                                                                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                                                                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                                                                  ;
+; USE_EAB                                        ; OFF          ; Untyped                                                                                  ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                                                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                                                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                                                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                                                      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                                                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                                                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                                                  ;
+; CBXI_PARAMETER                                 ; mult_46t     ; Untyped                                                                                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                                                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                                                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                                                  ;
++------------------------------------------------+--------------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                                                                  ;
++---------------------------------------+---------------------------------------------------------------------------------------------------------+
+; Name                                  ; Value                                                                                                   ;
++---------------------------------------+---------------------------------------------------------------------------------------------------------+
+; Number of entity instances            ; 3                                                                                                       ;
+; Entity Instance                       ; squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0                                           ;
+;     -- LPM_WIDTHA                     ; 32                                                                                                      ;
+;     -- LPM_WIDTHB                     ; 16                                                                                                      ;
+;     -- LPM_WIDTHP                     ; 48                                                                                                      ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                                                                ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                                                                     ;
+;     -- USE_EAB                        ; OFF                                                                                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                                                      ;
+; Entity Instance                       ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32                                                                                                      ;
+;     -- LPM_WIDTHB                     ; 32                                                                                                      ;
+;     -- LPM_WIDTHP                     ; 64                                                                                                      ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                                                                  ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                                                      ;
+;     -- USE_EAB                        ; OFF                                                                                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                                                      ;
+; Entity Instance                       ; squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32                                                                                                      ;
+;     -- LPM_WIDTHB                     ; 32                                                                                                      ;
+;     -- LPM_WIDTHP                     ; 64                                                                                                      ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                                                                  ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                                                      ;
+;     -- USE_EAB                        ; OFF                                                                                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                                                      ;
++---------------------------------------+---------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM" ;
++----------------+--------+----------+------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                  ;
++----------------+--------+----------+------------------------------------------------------------------------------------------+
+; num_in[31..16] ; Input  ; Info     ; Stuck at GND                                                                             ;
+; den_in[31..16] ; Input  ; Info     ; Stuck at GND                                                                             ;
+; den_norm       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.      ;
+; out_direction  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.      ;
++----------------+--------+----------+------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 5                           ;
+; cycloneiii_ff         ; 401                         ;
+;     CLR               ; 110                         ;
+;     CLR SLD           ; 38                          ;
+;     ENA               ; 40                          ;
+;     ENA CLR           ; 120                         ;
+;     ENA CLR SCLR      ; 9                           ;
+;     ENA CLR SLD       ; 61                          ;
+;     ENA SCLR          ; 9                           ;
+;     plain             ; 14                          ;
+; cycloneiii_lcell_comb ; 3715                        ;
+;     arith             ; 389                         ;
+;         2 data inputs ; 211                         ;
+;         3 data inputs ; 178                         ;
+;     normal            ; 3326                        ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 33                          ;
+;         2 data inputs ; 38                          ;
+;         3 data inputs ; 317                         ;
+;         4 data inputs ; 2935                        ;
+; cycloneiii_mac_mult   ; 10                          ;
+; cycloneiii_mac_out    ; 10                          ;
+;                       ;                             ;
+; Max LUT depth         ; 17.00                       ;
+; Average LUT depth     ; 9.91                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:29     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Wed Dec 31 09:57:25 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top_squarerootdigital_uart -c top_squarerootdigital_uart
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file src/uart_16_bit_system.vhd
+    Info (12022): Found design unit 1: UART_16_Bit_System-Behavioral File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_16_Bit_System.vhd Line: 29
+    Info (12023): Found entity 1: UART_16_Bit_System File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_16_Bit_System.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file src/uart_8_bit.vhd
+    Info (12022): Found design unit 1: UART_8_Bit-Behavioral File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_8_Bit.vhd Line: 23
+    Info (12023): Found entity 1: UART_8_Bit File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_8_Bit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file src/top_squarerootdigital_uart.vhd
+    Info (12022): Found design unit 1: top_squarerootdigital_uart-Behavioral File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/top_squarerootdigital_uart.vhd Line: 18
+    Info (12023): Found entity 1: top_squarerootdigital_uart File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/top_squarerootdigital_uart.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file src/squarerootdigital.vhd
+    Info (12022): Found design unit 1: squarerootdigital-structural File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/squarerootdigital.vhd Line: 30
+    Info (12023): Found entity 1: squarerootdigital File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/squarerootdigital.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file src/seed_generator.vhd
+    Info (12022): Found design unit 1: seed_generator-structural File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/seed_generator.vhd Line: 34
+    Info (12023): Found entity 1: seed_generator File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/seed_generator.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file src/pre_processor.vhd
+    Info (12022): Found design unit 1: pre_processor-structural File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/pre_processor.vhd Line: 22
+    Info (12023): Found entity 1: pre_processor File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/pre_processor.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file src/post_processor.vhd
+    Info (12022): Found design unit 1: post_processor-rtl File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/post_processor.vhd Line: 17
+    Info (12023): Found entity 1: post_processor File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/post_processor.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file src/nr_polisher.vhd
+    Info (12022): Found design unit 1: nr_polisher-rtl File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/nr_polisher.vhd Line: 34
+    Info (12023): Found entity 1: nr_polisher File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/nr_polisher.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file src/nr_initial_guess.vhd
+    Info (12022): Found design unit 1: nr_initial_guess-rtl File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/nr_initial_guess.vhd Line: 11
+    Info (12023): Found entity 1: nr_initial_guess File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/nr_initial_guess.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file src/normaliser_top.vhd
+    Info (12022): Found design unit 1: normaliser_top-structural File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/normaliser_top.vhd Line: 35
+    Info (12023): Found entity 1: normaliser_top File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/normaliser_top.vhd Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file src/multiplier.vhd
+    Info (12022): Found design unit 1: multiplier-behavioral File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/multiplier.vhd Line: 28
+    Info (12023): Found entity 1: multiplier File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/multiplier.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file src/msb_detector.vhd
+    Info (12022): Found design unit 1: msb_detector-behavioral File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/msb_detector.vhd Line: 13
+    Info (12023): Found entity 1: msb_detector File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/msb_detector.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file src/gs_initial_guess.vhd
+    Info (12022): Found design unit 1: gs_initial_guess-behavioral File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/gs_initial_guess.vhd Line: 16
+    Info (12023): Found entity 1: gs_initial_guess File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/gs_initial_guess.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file src/goldschmidt.vhd
+    Info (12022): Found design unit 1: goldschmidt-rtl File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/goldschmidt.vhd Line: 35
+    Info (12023): Found entity 1: goldschmidt File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/goldschmidt.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file src/divider.vhd
+    Info (12022): Found design unit 1: divider-structural File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/divider.vhd Line: 15
+    Info (12023): Found entity 1: divider File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/divider.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file src/barrel_shifter.vhd
+    Info (12022): Found design unit 1: barrel_shifter-behavioral File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/barrel_shifter.vhd Line: 29
+    Info (12023): Found entity 1: barrel_shifter File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/barrel_shifter.vhd Line: 14
+Info (12127): Elaborating entity "top_squarerootdigital_uart" for the top level hierarchy
+Info (12128): Elaborating entity "UART_16_Bit_System" for hierarchy "UART_16_Bit_System:U_COMMS" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/top_squarerootdigital_uart.vhd Line: 44
+Info (12128): Elaborating entity "UART_8_Bit" for hierarchy "UART_16_Bit_System:U_COMMS|UART_8_Bit:UART_CORE" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_16_Bit_System.vhd Line: 49
+Info (12128): Elaborating entity "squarerootdigital" for hierarchy "squarerootdigital:U_CORE" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/top_squarerootdigital_uart.vhd Line: 70
+Info (12128): Elaborating entity "seed_generator" for hierarchy "squarerootdigital:U_CORE|seed_generator:U_SEED_GEN" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/squarerootdigital.vhd Line: 65
+Info (12128): Elaborating entity "pre_processor" for hierarchy "squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/seed_generator.vhd Line: 43
+Warning (10036): Verilog HDL or VHDL warning at pre_processor.vhd(26): object "w_den_dummy" assigned a value but never read File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/pre_processor.vhd Line: 26
+Warning (10036): Verilog HDL or VHDL warning at pre_processor.vhd(28): object "w_shift_dir" assigned a value but never read File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/pre_processor.vhd Line: 28
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value "'U'" File: c:/intel/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value "'X'" File: c:/intel/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value "'Z'" File: c:/intel/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value "'W'" File: c:/intel/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value "'-'" File: c:/intel/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103
+Info (12128): Elaborating entity "normaliser_top" for hierarchy "squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/pre_processor.vhd Line: 38
+Info (12128): Elaborating entity "msb_detector" for hierarchy "squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|msb_detector:master_detector" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/normaliser_top.vhd Line: 40
+Info (12128): Elaborating entity "barrel_shifter" for hierarchy "squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|pre_processor:U_PRE_PROC|normaliser_top:U_NORM|barrel_shifter:den_shifter" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/normaliser_top.vhd Line: 49
+Info (12128): Elaborating entity "nr_initial_guess" for hierarchy "squarerootdigital:U_CORE|seed_generator:U_SEED_GEN|nr_initial_guess:U_NR_ROM" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/seed_generator.vhd Line: 54
+Info (12128): Elaborating entity "divider" for hierarchy "squarerootdigital:U_CORE|divider:U_DIVIDER" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/squarerootdigital.vhd Line: 79
+Info (12128): Elaborating entity "gs_initial_guess" for hierarchy "squarerootdigital:U_CORE|divider:U_DIVIDER|gs_initial_guess:U_ROM" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/divider.vhd Line: 19
+Info (12128): Elaborating entity "goldschmidt" for hierarchy "squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/divider.vhd Line: 25
+Info (12128): Elaborating entity "multiplier" for hierarchy "squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/goldschmidt.vhd Line: 51
+Info (12128): Elaborating entity "nr_polisher" for hierarchy "squarerootdigital:U_CORE|nr_polisher:U_POLISHER" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/squarerootdigital.vhd Line: 93
+Info (12128): Elaborating entity "post_processor" for hierarchy "squarerootdigital:U_CORE|post_processor:U_POST" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/squarerootdigital.vhd Line: 107
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "squarerootdigital:U_CORE|post_processor:U_POST|Mult0" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/post_processor.vhd Line: 48
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|Mult0" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/multiplier.vhd Line: 33
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_den|Mult0" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/multiplier.vhd Line: 33
+Info (12130): Elaborated megafunction instantiation "squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/post_processor.vhd Line: 48
+Info (12133): Instantiated megafunction "squarerootdigital:U_CORE|post_processor:U_POST|lpm_mult:Mult0" with the following parameter: File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/post_processor.vhd Line: 48
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "48"
+    Info (12134): Parameter "LPM_WIDTHR" = "48"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_vgt.tdf
+    Info (12023): Found entity 1: mult_vgt File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/db/mult_vgt.tdf Line: 31
+Info (12130): Elaborated megafunction instantiation "squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0" File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/multiplier.vhd Line: 33
+Info (12133): Instantiated megafunction "squarerootdigital:U_CORE|divider:U_DIVIDER|goldschmidt:U_GOLDSCHMIDT|multiplier:mult_num|lpm_mult:Mult0" with the following parameter: File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/multiplier.vhd Line: 33
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "64"
+    Info (12134): Parameter "LPM_WIDTHR" = "64"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_46t.tdf
+    Info (12023): Found entity 1: mult_46t File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/db/mult_46t.tdf Line: 31
+Info (13014): Ignored 534 buffer(s)
+    Info (13019): Ignored 534 SOFT buffer(s)
+Info (13000): Registers with preset signals will power-up high File: D:/Quartus/Sistem Digital/Square-Root-Digital-main/src/UART_8_Bit.vhd Line: 14
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3800 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 3775 logic cells
+    Info (21062): Implemented 20 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4873 megabytes
+    Info: Processing ended: Wed Dec 31 09:58:04 2025
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:00:27
+
+

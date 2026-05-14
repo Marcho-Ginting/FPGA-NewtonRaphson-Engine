@@ -1,0 +1,12 @@
+Category,Metric,Value,Description
+General,Total Test Vectors,65535,Jumlah data uji input (0-65535)
+Precision,Pass Rate (Strict < 2 LSB),35.98 %,Success rate dengan toleransi ketat (Ideal Rounding)
+Precision,Pass Rate (Relaxed < 10 LSB),100.00 %,Success rate dengan toleransi Truncation (Real Hardware)
+Precision,Average Error,3.9456 LSB,Rata-rata penyimpangan bit
+Precision,Max Error,8.0000 LSB,Penyimpangan terburuk (Worst Case)
+Precision,Error Std Dev,2.7931 LSB,Variasi kestabilan error
+Signal Quality,SQNR,79.63 dB,Kualitas sinyal output (Target > 48 dB untuk 8-bit)
+Timing,Average Latency,7.6719 ms,Rata-rata waktu proses per data
+Timing,Max Latency,64.0760 ms,Waktu terlama (Lag spike)
+Timing,Jitter,0.4623 ms,Ketidakstabilan waktu komunikasi
+Timing,System Throughput,130.35 ops/sec,Estimasi jumlah operasi per detik (@9600 baud)
